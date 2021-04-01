@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
-import Layout from './components/Layout'
-// import Post from './pages/Post'
+import Post from './pages/Post'
 import { ThemeProvider } from 'styled-components'
 
 const themes = {
@@ -22,7 +21,7 @@ const themes = {
 function App () {
   return (
     <ThemeProvider theme={themes.dark}>
-      <Layout />
+      <Post />
     </ThemeProvider>
   )
 }
