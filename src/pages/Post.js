@@ -1,8 +1,9 @@
 import Layout from '../components/Layout'
 import post from '../api/post'
 
-import htmr from 'htmr'
 import styled from 'styled-components'
+import htmr from 'htmr'
+import day from 'dayjs'
 
 const Container = styled.div`
   display: grid;
@@ -101,7 +102,7 @@ function Post (props) {
         <Title as="h1">{post.title}</Title>
 
         <Meta>
-          <div>{post.createdAt}</div>
+          <div>{day.unix(post.publishedAt).format('MMMM D, YYYY')}</div>
         </Meta>
 
         <Cover>
