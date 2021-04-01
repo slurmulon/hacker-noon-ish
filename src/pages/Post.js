@@ -90,10 +90,9 @@ const Cover = styled.div`
 `
 
 function Post (props) {
-  // TODO: Move to Profile component
-  const { profile } = post
-  const url = {
-    profile: `https://hackernoon.com/u/${profile.handle}`
+  const profile = {
+    ...post.profile,
+    url: `https://hackernoon.com/u/${post.profile.handle}`
   }
 
   return (
@@ -114,7 +113,7 @@ function Post (props) {
         </Cover>
 
         <Profile>
-          <a href={url.profile}>
+          <a href={profile.url}>
             <img
               src={profile.avatar}
               alt={`${profile.handle} Hacker Noon Profile`}
@@ -125,9 +124,9 @@ function Post (props) {
           </a>
 
           <h3 className="about">
-            <a href={url.profile}>@{profile.handle}</a>
-            <small className="name">{post.profile.displayName}</small>
-            <p className="bio">{post.profile.bio}</p>
+            <a href={profile.url}>@{profile.handle}</a>
+            <small className="name">{profile.displayName}</small>
+            <p className="bio">{profile.bio}</p>
           </h3>
         </Profile>
 
