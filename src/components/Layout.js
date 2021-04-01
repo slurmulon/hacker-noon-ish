@@ -12,17 +12,6 @@ const Skeleton = styled.div`
     color: ${props => props.theme.fg};
     text-decoration: ${props => 'wavy underline ' + props.theme.main};
   }
-
-  // TOOD: Move to Content
-  blockquote {
-    grid-column: 1 / -1;
-    font-size: 1.25rem;
-    font-style: italic;
-    margin-left: 0px;
-    margin-right: 0px;
-    padding: 2rem 0px;
-    text-align: center;
-  }
 `
 
 const Toolbar = styled.div`
@@ -31,26 +20,16 @@ const Toolbar = styled.div`
   width: 100%;
   z-index: 10;
   background-color: ${props => props.theme.main};
-  // background-color: rgb(0,255,0);
-  // background-color: #b6ffb4;
-  // background-color: rgba(0,50,0);
-  // background-color: cyan;
-  // background-color: orangered;
-  // background-color: aquamarine;
-  // background-color: #bfff6b;
+`
 
-  .logo, .links {
-    padding: 1em;
-  }
+const Links = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+  background-color: ${props => props.theme.bg2};
 
-  .links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: ${props => props.theme.bg2};
-  }
-
-  .links a {
+  a {
     text-decoration: none;
     color: limegreen;
     font-family: 'IBM Plex Mono', monospace;
@@ -64,8 +43,17 @@ const Content = styled.main`
   align-items: start;
   font-family: 'IBM Plex Sans', sans-serif;
 
+  blockquote {
+    grid-column: 1 / -1;
+    font-size: 1.25rem;
+    font-style: italic;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 2rem 0px;
+    text-align: center;
+  }
+
   @media (max-width: 1280px) {
-    // padding: 1rem 2rem;
     padding: 1rem;
   }
 `
@@ -90,11 +78,11 @@ function Layout (props) {
           className="logo"
         />
 
-        <div className="links">
+        <Links>
           {links.map((link, index) =>
             <a key={index} href={link.url}>{link.name}</a>
           )}
-        </div>
+        </Links>
       </Toolbar>
 
       <Content>
@@ -102,7 +90,7 @@ function Layout (props) {
       </Content>
 
       <footer>
-        Footer!
+        {/* TODO */}
       </footer>
     </Skeleton>
   )
