@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import './App.css'
+import Layout from './components/Layout'
+// import Post from './pages/Post'
+import { ThemeProvider } from 'styled-components'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const themes = {
+  light: {
+    main: '#5afc00',
+    fg: '#000000',
+    bg: 'whitesmoke',
+    bg2: '#0e3b00'
+  },
+  dark: {
+    main: '#5afc00',
+    fg: 'whitesmoke',
+    bg: '#151515',
+    bg2: '#0e3b00'
+  }
 }
 
-export default App;
+function App () {
+  return (
+    <ThemeProvider theme={themes.dark}>
+      <Layout />
+    </ThemeProvider>
+  )
+}
+
+export default App
