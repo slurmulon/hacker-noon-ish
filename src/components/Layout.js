@@ -20,6 +20,10 @@ const Toolbar = styled.div`
   width: 100%;
   z-index: 10;
   background-color: ${props => props.theme.main};
+
+  .logo {
+    padding: 1em;
+  }
 `
 
 const Links = styled.div`
