@@ -40,7 +40,6 @@ const Title = styled.div`
   @media screen and (max-width: 768px) {
     grid-column: 2 / -2;
   }
- 
 `
 
 const Meta = styled.div`
@@ -51,7 +50,6 @@ const Meta = styled.div`
 
 const Profile = styled.div`
   display: grid;
-  // grid-template-columns: 1fr;
   grid-template-columns: 75px 1fr;
   grid-row: span 5 / auto;
   grid-column: 1 / span 1;
@@ -61,7 +59,7 @@ const Profile = styled.div`
   margin-bottom: 20px;
 
   .about {
-    margin-top: 0
+    margin-top: 0;
   }
 
   .name {
@@ -75,10 +73,6 @@ const Profile = styled.div`
   @media screen and (min-width: 768px) {
     grid-template-columns: 1fr;
   }
-
-  // @media screen and (min-width: 768px) {
-  //   grid-column: 2 / -2;
-  // }
 
   @median screen and (max-width: 768px) {
     gap: 5px;
@@ -94,16 +88,6 @@ const Cover = styled.div`
     height: auto;
   }
 `
-
-// const Content = styled.div`
-//   // display: flex;
-//   // flex-flow: row wrap;
-//   // background: pink;
-//   // width: 100%;
-//   display: grid;
-//   grid-template-columns: minmax(0, 1fr);
-//   gap: 20px;
-// `
 
 function Post (props) {
   // TODO: Move to Profile component
@@ -141,9 +125,7 @@ function Post (props) {
           </a>
 
           <h3 className="about">
-            <a href={url.profile}>
-              @{profile.handle}
-            </a>
+            <a href={url.profile}>@{profile.handle}</a>
             <small className="name">{post.profile.displayName}</small>
             <p className="bio">{post.profile.bio}</p>
           </h3>
